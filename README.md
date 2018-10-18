@@ -1,5 +1,6 @@
 # Nicepage
 ### [demo](http://nicezz.com/NicePage/index.html)<br>
+### 基于强大的LAYUI框架,实现JSON数据格式的自动表格分页,配置简单,上手速度快。
 #### /*只需设置如下内容即可*/
 			//JSON格式为标准格式 
 			var json=[{"date":"18日星期四","sunrise":"06:06","high":"高温 16.0℃","low":"低温 9.0℃","sunset":"17:20","aqi":41.0,"fx":"北风","fl":"3-4级","type":"晴","notice":"愿你拥有比阳光明媚的心情"}]
