@@ -1,4 +1,5 @@
 # Nicepage
+![Image text](https://github.com/duzhen-cn/Nicepage/blob/master/index.jpg)
 ### [demo](http://nicezz.com/NicePage/index.html)<br>
 ### 基于强大的LAYUI框架,通过扩展nicePage.js实现JSON数据格式的自动表格分页,配置简单,上手速度快。<br>
 #### 引入js,css文件夹即可
