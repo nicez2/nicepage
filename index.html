@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>NicePage demo</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="css/layui.css" type="text/css" rel="stylesheet">
+
+
+</head>
+
+<BODY >
+	<center style="padding-top: 20px">
+		<a style="font-size: 60px">JSON分页DEMO实例</a>
+
+		<div style="width: 80%;">
+			<blockquote class="layui-elem-quote">#基于强大的<a href="https://www.layui.com/" style="color: blueviolet;font-weight: bold">
+					layui </a>,实现JSON数据格式的自动表格分页,配置简单,上手速度快。</blockquote>
+
+			<div id="test1"></div>
+			<div id="demo20"></div>
+		</div>
+		
+	</center>
+	            
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+		<legend>基本使用说明</legend>
+	  </fieldset>
+	   
+			<pre class="layui-code">
+			/*只需设置如下内容即可*/
+			//JSON格式为标准格式 
+			var json=[{"date":"18日星期四","sunrise":"06:06","high":"高温 16.0℃","low":"低温 9.0℃","sunset":"17:20","aqi":41.0,"fx":"北风","fl":"3-4级","type":"晴","notice":"愿你拥有比阳光明媚的心情"}]
+			nameList//数组为表格列名,如['序号','姓名','年龄']
+			widthList//数组为列名的宽度,如['100','200','100']
+			//通过下面两个方法填充数据
+			nicePage.returnList(json);
+			var htmlString = nicePage.returnHtml(nameList, widthList);
+			nicePage.setCfg({
+				dom: 'demo20',//指定html元素渲染
+				limit: 20,//每页20行数据
+				color: '#1E9FFF',//分页的颜色
+				layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']//需要显示的布局
+			});
+
+		</pre>
+</body>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script language="Javascript" src="js/layui.js"></script>
+<script language="Javascript" src="js/nicePage.js"></script>
+<script LANGUAGE="javascript">
+
+
+	var json = [{
+		"date": "18日星期四",
+		"sunrise": "06:06",
+		"high": "高温 16.0℃",
+		"low": "低温 9.0℃",
+		"sunset": "17:20",
+		"aqi": 41.0,
+		"fx": "北风",
+		"fl": "3-4级",
+		"type": "晴",
+		"notice": "愿你拥有比阳光明媚的心情"
+	}, {
+		"date": "19日星期五",
+		"sunrise": "06:07",
+		"high": "高温 17.0℃",
+		"low": "低温 10.0℃",
+		"sunset": "17:19",
+		"aqi": 66.0,
+		"fx": "无持续风向",
+		"fl": "3-4级",
+		"type": "晴",
+		"notice": "愿你拥有比阳光明媚的心情"
+	}, {
+		"date": "20日星期六",
+		"sunrise": "06:08",
+		"high": "高温 18.0℃",
+		"low": "低温 12.0℃",
+		"sunset": "17:18",
+		"aqi": 68.0,
+		"fx": "南风",
+		"fl": "3-4级",
+		"type": "多云",
+		"notice": "阴晴之间，谨防紫外线侵扰"
+	}, {
+		"date": "21日星期日",
+		"sunrise": "06:09",
+		"high": "高温 19.0℃",
+		"low": "低温 15.0℃",
+		"sunset": "17:16",
+		"aqi": 57.0,
+		"fx": "南风",
+		"fl": "3-4级",
+		"type": "阴",
+		"notice": "不要被阴云遮挡住好心情"
+	}, {
+		"date": "22日星期一",
+		"sunrise": "06:10",
+		"high": "高温 19.0℃",
+		"low": "低温 14.0℃",
+		"sunset": "17:15",
+		"aqi": 49.0,
+		"fx": "南风",
+		"fl": "3-4级",
+		"type": "阵雨",
+		"notice": "阵雨来袭，出门记得带伞"
+	}, {
+		"date": "18日星期四",
+		"sunrise": "06:06",
+		"high": "高温 16.0℃",
+		"low": "低温 9.0℃",
+		"sunset": "17:20",
+		"aqi": 41.0,
+		"fx": "北风",
+		"fl": "3-4级",
+		"type": "晴",
+		"notice": "愿你拥有比阳光明媚的心情"
+	}, {
+		"date": "19日星期五",
+		"sunrise": "06:07",
+		"high": "高温 17.0℃",
+		"low": "低温 10.0℃",
+		"sunset": "17:19",
+		"aqi": 66.0,
+		"fx": "无持续风向",
+		"fl": "3-4级",
+		"type": "晴",
+		"notice": "愿你拥有比阳光明媚的心情"
+	}, {
+		"date": "20日星期六",
+		"sunrise": "06:08",
+		"high": "高温 18.0℃",
+		"low": "低温 12.0℃",
+		"sunset": "17:18",
+		"aqi": 68.0,
+		"fx": "南风",
+		"fl": "3-4级",
+		"type": "多云",
+		"notice": "阴晴之间，谨防紫外线侵扰"
+	}, {
+		"date": "21日星期日",
+		"sunrise": "06:09",
+		"high": "高温 19.0℃",
+		"low": "低温 15.0℃",
+		"sunset": "17:16",
+		"aqi": 57.0,
+		"fx": "南风",
+		"fl": "3-4级",
+		"type": "阴",
+		"notice": "不要被阴云遮挡住好心情"
+	}, {
+		"date": "22日星期一",
+		"sunrise": "06:10",
+		"high": "高温 19.0℃",
+		"low": "低温 14.0℃",
+		"sunset": "17:15",
+		"aqi": 49.0,
+		"fx": "南风",
+		"fl": "3-4级",
+		"type": "阵雨",
+		"notice": "阵雨来袭，出门记得带伞"
+	}, {
+		"date": "18日星期四",
+		"sunrise": "06:06",
+		"high": "高温 16.0℃",
+		"low": "低温 9.0℃",
+		"sunset": "17:20",
+		"aqi": 41.0,
+		"fx": "北风",
+		"fl": "3-4级",
+		"type": "晴",
+		"notice": "愿你拥有比阳光明媚的心情"
+	}, {
+		"date": "19日星期五",
+		"sunrise": "06:07",
+		"high": "高温 17.0℃",
+		"low": "低温 10.0℃",
+		"sunset": "17:19",
+		"aqi": 66.0,
+		"fx": "无持续风向",
+		"fl": "3-4级",
+		"type": "晴",
+		"notice": "愿你拥有比阳光明媚的心情"
+	}, {
+		"date": "20日星期六",
+		"sunrise": "06:08",
+		"high": "高温 18.0℃",
+		"low": "低温 12.0℃",
+		"sunset": "17:18",
+		"aqi": 68.0,
+		"fx": "南风",
+		"fl": "3-4级",
+		"type": "多云",
+		"notice": "阴晴之间，谨防紫外线侵扰"
+	}, {
+		"date": "21日星期日",
+		"sunrise": "06:09",
+		"high": "高温 19.0℃",
+		"low": "低温 15.0℃",
+		"sunset": "17:16",
+		"aqi": 57.0,
+		"fx": "南风",
+		"fl": "3-4级",
+		"type": "阴",
+		"notice": "不要被阴云遮挡住好心情"
+	}, {
+		"date": "22日星期一",
+		"sunrise": "06:10",
+		"high": "高温 19.0℃",
+		"low": "低温 14.0℃",
+		"sunset": "17:15",
+		"aqi": 49.0,
+		"fx": "南风",
+		"fl": "3-4级",
+		"type": "阵雨",
+		"notice": "阵雨来袭，出门记得带伞"
+	}, {
+		"date": "18日星期四",
+		"sunrise": "06:06",
+		"high": "高温 16.0℃",
+		"low": "低温 9.0℃",
+		"sunset": "17:20",
+		"aqi": 41.0,
+		"fx": "北风",
+		"fl": "3-4级",
+		"type": "晴",
+		"notice": "愿你拥有比阳光明媚的心情"
+	}, {
+		"date": "19日星期五",
+		"sunrise": "06:07",
+		"high": "高温 17.0℃",
+		"low": "低温 10.0℃",
+		"sunset": "17:19",
+		"aqi": 66.0,
+		"fx": "无持续风向",
+		"fl": "3-4级",
+		"type": "晴",
+		"notice": "愿你拥有比阳光明媚的心情"
+	}, {
+		"date": "20日星期六",
+		"sunrise": "06:08",
+		"high": "高温 18.0℃",
+		"low": "低温 12.0℃",
+		"sunset": "17:18",
+		"aqi": 68.0,
+		"fx": "南风",
+		"fl": "3-4级",
+		"type": "多云",
+		"notice": "阴晴之间，谨防紫外线侵扰"
+	}, {
+		"date": "21日星期日",
+		"sunrise": "06:09",
+		"high": "高温 19.0℃",
+		"low": "低温 15.0℃",
+		"sunset": "17:16",
+		"aqi": 57.0,
+		"fx": "南风",
+		"fl": "3-4级",
+		"type": "阴",
+		"notice": "不要被阴云遮挡住好心情"
+	}, {
+		"date": "22日星期一",
+		"sunrise": "06:10",
+		"high": "高温 19.0℃",
+		"low": "低温 14.0℃",
+		"sunset": "17:15",
+		"aqi": 49.0,
+		"fx": "南风",
+		"fl": "3-4级",
+		"type": "阵雨",
+		"notice": "阵雨来袭，出门记得带伞"
+	}, {
+		"date": "18日星期四",
+		"sunrise": "06:06",
+		"high": "高温 16.0℃",
+		"low": "低温 9.0℃",
+		"sunset": "17:20",
+		"aqi": 41.0,
+		"fx": "北风",
+		"fl": "3-4级",
+		"type": "晴",
+		"notice": "愿你拥有比阳光明媚的心情"
+	}, {
+		"date": "19日星期五",
+		"sunrise": "06:07",
+		"high": "高温 17.0℃",
+		"low": "低温 10.0℃",
+		"sunset": "17:19",
+		"aqi": 66.0,
+		"fx": "无持续风向",
+		"fl": "3-4级",
+		"type": "晴",
+		"notice": "愿你拥有比阳光明媚的心情"
+	}, {
+		"date": "20日星期六",
+		"sunrise": "06:08",
+		"high": "高温 18.0℃",
+		"low": "低温 12.0℃",
+		"sunset": "17:18",
+		"aqi": 68.0,
+		"fx": "南风",
+		"fl": "3-4级",
+		"type": "多云",
+		"notice": "阴晴之间，谨防紫外线侵扰"
+	}, {
+		"date": "21日星期日",
+		"sunrise": "06:09",
+		"high": "高温 19.0℃",
+		"low": "低温 15.0℃",
+		"sunset": "17:16",
+		"aqi": 57.0,
+		"fx": "南风",
+		"fl": "3-4级",
+		"type": "阴",
+		"notice": "不要被阴云遮挡住好心情"
+	}, {
+		"date": "22日星期一",
+		"sunrise": "06:10",
+		"high": "高温 19.0℃",
+		"low": "低温 14.0℃",
+		"sunset": "17:15",
+		"aqi": 49.0,
+		"fx": "南风",
+		"fl": "3-4级",
+		"type": "阵雨",
+		"notice": "阵雨来袭，出门记得带伞"
+	}];
+	var nameList = ['日期', '日出时刻', '最高温', '最低温', '日落时间', '空气指数', '风向', '风力', '天气', '提示'];
+	var widthList = [100, 100, 100, 100, 100, 100, 100, 100, 100, 250];
+	var tableList = nicePage.returnList(json);
+		var htmlString = nicePage.returnHtml(nameList, widthList);
+		nicePage.setCfg({
+			dom: 'demo20',
+			limit: 20,
+			color: '#1E9FFF',
+			layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+		});
+	$(function () {
+
+		layui.use('laypage', function () {
+			var laypage = layui.laypage;
+			laypage.render({
+				elem: nicePage.dom,
+				limit: nicePage.limt,
+				theme: nicePage.color,
+				count: json.length,
+				layout: nicePage.layout,
+				jump: function (obj) {
+
+					document.getElementById('test1').innerHTML = function () {
+						var arr = [htmlString],
+							thisData = tableList.concat().splice(obj.curr * obj.limit - obj.limit, obj.limit);
+						layui.each(thisData, function (index, item) {
+							var table = nicePage.returnTable(item);
+							arr.push(table);
+						});
+						arr.push(" </tbody></table></br>");
+						return arr.join('');
+					}();
+				}
+			});
+		});
+
+	});
+</script>
+
+</html>
