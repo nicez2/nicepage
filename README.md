@@ -3,7 +3,6 @@
 ### [demo](http://nicezz.com/NicePage/index.html)<br>
 ### 基于强大的LAYUI框架,通过扩展nicePage.js实现JSON数据格式的自动表格分页和跳转功能,配置简单,上手速度快，兼容IE5+<br>
 #### 引入js,css文件夹即可
-#### /*只需设置如下内容即可*/
 ```javascript
 			//标准json格式 目前只支持[{a:b,c:d},{a:b,c:d}]
 
